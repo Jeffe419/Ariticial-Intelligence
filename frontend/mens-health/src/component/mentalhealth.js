@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/chatBot.css";
 
 const ChatBotComponent = () => {
   const [messages, setMessages] = useState([]);
@@ -45,7 +44,7 @@ const ChatBotComponent = () => {
     setIsError(false);
     const formattedConversation = formatConversation();
     const response = await axios.post(
-      //"https://api.openai.com/v1/engines/text-davinci-003/completions",
+      "https://api.openai.com/v1/engines/text-davinci-003/completions",
       {
         prompt: `${formattedConversation}\nuser: ${inputValue}\nassistant:`,
         temperature: 0.7,
